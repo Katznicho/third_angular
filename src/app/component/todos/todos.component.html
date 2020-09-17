@@ -1,0 +1,19 @@
+<div>
+    <div>
+        <label for="">AddTodo</label>{{'  '}}
+        <input 
+        type="text"
+        placeholder="addTodo"
+        [ngModel] = "addedTodo"
+        (ngModelChange) = "getTodo($event)"
+        >
+        {{'  '}}
+        <button type="submit" class="btn btn-primary" (click)="handleTodo()">Add</button>
+    </div>
+    <app-todo-item 
+    *ngFor = "let todos of todo"
+    [todo] = "todos"
+    (deletedTodo) = "getDeleted($event)"
+    >
+    </app-todo-item>
+</div>
